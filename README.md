@@ -10,9 +10,9 @@ Questions you should ask yourself before starting this guide
 3. Am I on Windows or Linux?
 
 ## Where to Begin?
-If you are on Windows, proceed here.
+- If you are on Windows, proceed here.
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#windows
-If you are on Linux, proceed here.
+- If you are on Linux, proceed here.
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#linux
 
 # Windows
