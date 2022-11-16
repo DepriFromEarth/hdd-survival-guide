@@ -181,7 +181,7 @@ A video to check if your hard drive is dying https://www.youtube.com/watch?v=OGO
 A Linux section will be added later.
 
 ## NCQ
-Enter BIOS and search for the storage configuration.Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
+Enter BIOS and search for the storage configuration. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
 
 ## Credits
 Thank you amitxv, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
