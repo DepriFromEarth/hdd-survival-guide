@@ -57,7 +57,9 @@ Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory M
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
 Now open a command prompt with admin rights and type
-```--trace boot --prepsystem --verboseReadyBoot xbootmgr```
+```-xbootmgr -trace boot -prepSystem -verboseReadyBoot```
+
+Now your PC will have been restarted six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboots were training for ReadyBoot. After the training is finished, you'll notice a huge improvement in startup.
 
 Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better!
 
@@ -110,11 +112,11 @@ I recommend the following programs for junk removal:
 
 I suggest using the portable versions of these programs.
 
-If you do not wish to use a program for whatever reason and just use the Windows tools to clean your system, continue here.
+If you do not wish to use a program for whatever reason and just use the Windows tools to clean your system, continue below.
 
 ## Cleanup
 
-- Open ```C:\prerequisites\sysinternals\Autoruns.exe``` and remove any unwanted programs such as game launchers. Remove all obsolete entries with a yellow label, run with ``C:\prerequisites\nsudo\NSudo.exe`` if you encounter any permission errors
+- Open Autoruns and remove any unwanted programs such as game launchers. Remove all obsolete entries with a yellow label, run with NSudo if you encounter any permission errors
 
 - Some locations you may want to review for leftover bloatware and unwanted shortcuts
 
@@ -201,3 +203,6 @@ A Linux section will be added later.
 
 ## NCQ
 Enter BIOS and search for the storage configuration.Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
+
+## Credits
+Thank you amitxv, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
