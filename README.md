@@ -19,7 +19,7 @@ https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#linux
 
 ## Partition Style
 Before we start, we have to find out which type of BIOS we have so we can choose the proper partitioning style.
-After we find this out, we can wipe the drive and install Windows again if we have the improper style for whatever reason.
+After we find this out, we can wipe the drive and install Windows again if we have the improper style.
 If you are already using the proper style, you can skip this step.
 
 - Open "Run" with the Windows key, type in "msinfo32," and press enter. If we aren't there already, click System summary to bring us to the correct page.
@@ -40,7 +40,7 @@ Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will 
 ## Short Stroke
 Now that we have reinstalled Windows or simply checked that everything is okay, we will short-stroke our hard drive to increase the minimum speeds of the drive.
 - Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
-- Here's the official link to HDD Tune:http://www.hdtune.com/download.html
+- Here's the official link to HDD Tune: http://www.hdtune.com/download.html
 
 ## Enabling Prefetching
 Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
