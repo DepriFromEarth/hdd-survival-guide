@@ -9,7 +9,7 @@ A guide for people still on HDDs in the modern age where SSDs control the world!
 
 3. Am I on Windows or Linux?
 
-##If you have Windows procede here.
+## If you have Windows procede here.
 
 Before we start we have to find out which type of BIOS we have so we can choose the proper partitioning style.
 After we find this out we can wipe the drive and install windows again if we have the improper style for whatever reason.
