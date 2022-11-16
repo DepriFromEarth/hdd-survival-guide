@@ -186,11 +186,17 @@ VoptXP
 etc.
 
 - I can only suggest using Contig or the default Windows defragmenter.
-   Contig
+
+    - Contig
+
   - https://docs.microsoft.com/en-us/sysinternals/downloads/contig
-  Contig Guide
+
+    - Contig Guide
+
   - https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
-  A GUI for Contig
+
+    - A GUI for Contig
+
   - https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
 
 When should I defrag? when the system is around 56% fragmented. Constantly defragging may prematurely kill your drive.
