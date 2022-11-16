@@ -164,27 +164,6 @@ If you are on Windows 10+, you'll have to open up Task Manager and disable start
 ## Defrag
 Now that we have done all that, we can discuss defragging programs.
 
-- do not use
-O&O Defrag
-UltraDefrag
-Defraggler
-Auslogics disk defrag
-Puran Defragmenter
-My Defragmenter
-IOBit Smart Defrag
-Glarysoft Disk Accelerator
-Toolwiz Smart Defrag
-Wise Care 365
-Advanced System Tweak
-Fragger
-PerfectDisk Pro
-UltimateDisk Defrag
-Condusiv Diskeeper
-Baidu PC is faster for Windows
-MyDefrag
-VoptXP
-etc.
-
 - I can only suggest using Contig or the default Windows defragmenter.
 
   -  Contig: https://docs.microsoft.com/en-us/sysinternals/downloads/contig
