@@ -10,6 +10,9 @@ A guide for people still on HDDs in the modern age where SSDs control the world!
 3. Am I on Windows or Linux?
 
 ## If you have Windows procede here.
+https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#if-you-have-linux-procede-here
+
+## Windows
 
 Before we start we have to find out which type of BIOS we have so we can choose the proper partitioning style.
 After we find this out we can wipe the drive and install windows again if we have the improper style for whatever reason.
@@ -153,7 +156,7 @@ Avoid tapping the drive or a rumbly environment since this will affect the phsyi
 
 A video to check if your hard drive is dying: https://www.youtube.com/watch?v=OGOHA-t6j6M
 
-## If you have Linux procede here
+## Linux
 A Linux Section will be added later
 
 Now lets boot into BIOS and look for storage configuration. Find your hard drive and set the SATA controller to ACHI. It should be like this by default but if it isn't enable it doing so will enable NCQ and allows the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
