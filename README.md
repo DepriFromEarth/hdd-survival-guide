@@ -10,9 +10,9 @@ A guide for people still on HDDs in the modern age where SSDs control the world!
 3. Am I on Windows or Linux?
 
 ## Where to Start?
-If you are on Windows proceed here
+- If you are on Windows proceed here
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#windows
-If you are on Linux proceed here
+- If you are on Linux proceed here
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#linux
 
 ## Windows
