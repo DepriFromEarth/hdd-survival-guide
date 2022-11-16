@@ -22,20 +22,20 @@ Before we start, we have to find out which type of BIOS we have so we can choose
 After we find this out, we can wipe the drive and install Windows again if we have the improper style for whatever reason.
 If you are already using the proper style, you can skip this step.
 
-Open "Run" with the Windows key, type in "msinfo32," and press enter. If we aren't there already, click System summary to bring us to the correct page.
+- Open "Run" with the Windows key, type in "msinfo32," and press enter. If we aren't there already, click System summary to bring us to the correct page.
 Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will use the MBR partitioning style; if it displays UEFI, we will use GPT.
 
-You can break these rules if your hard drive has 2 TB or more.
-This will require you to use GPT regardless of whether you have a legacy BIOS because MBR simply doesn't support over 2 TB; the extra space will be lost.
+- You can break these rules if your hard drive has 2 TB or more.
+- This will require you to use GPT regardless of whether you have a legacy BIOS because MBR simply doesn't support over 2 TB; the extra space will be lost.
 
-Now type in Run, "diskmgmt.msc." Right-click your disk and select properties. Then go to "Volumes."
-Here we can see if our partitioning style is MBR or GPT. If everything matches with our BIOS mode, nothing needs to be done!
-If we have MBR but our BIOS is UEFI, I suggest you reinstall Windows with the GPT style for greater storage and speeds.
-If we have GPT but our BIOS is legacy and the drive is 2TB+, we don't have to do anything.
+- Now type in Run, "diskmgmt.msc." Right-click your disk and select properties. Then go to "Volumes."
+- Here we can see if our partitioning style is MBR or GPT. If everything matches with our BIOS mode, nothing needs to be done!
+- If we have MBR but our BIOS is UEFI, I suggest you reinstall Windows with the GPT style for greater storage and speeds.
+- If we have GPT but our BIOS is legacy and the drive is 2TB+, we don't have to do anything.
 
-Do not try to mix and match GPT and MBR partitioning styles with each other because issues can arise.
+- Do not try to mix and match GPT and MBR partitioning styles with each other because issues can arise.
 
-There are multiple ways to reinstall Windows, so I will not go over that here, but I suggest using Rufus and selecting the right partition style, then burning the desired iso to the USB.
+- There are multiple ways to reinstall Windows, so I will not go over that here, but I suggest using Rufus and selecting the right partition style, then burning the desired iso to the USB.
 
 ## Short Stroke
 Now that we have reinstalled Windows or simply checked that everything is okay, we will short-stroke our hard drive to increase the minimum speeds of the drive.
