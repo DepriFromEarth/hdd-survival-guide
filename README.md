@@ -111,39 +111,57 @@ I suggest using the portable versions of these programs.
 
 If you do not wish to use a program for whatever reason and just use the Windows tools to clean your system, continue here.
 
-Some locations you may want to review for leftover bloatware and unwanted shortcuts
+## Cleanup
 
-"C:\"
-"C:\ProgramData\Microsoft\Windows\Start Menu\Programs"
-"C:\Program Files"
-"C:\ProgramData"
-"C:\Windows\SoftwareDistribution\download"
-"C:\Windows\Temp"
-"%userprofile%\AppData"
-"%userprofile%\AppData\Local\Temp"
-"%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs"
-"%userprofile%\Downloads"
+- Open ```C:\prerequisites\sysinternals\Autoruns.exe``` and remove any unwanted programs such as game launchers. Remove all obsolete entries with a yellow label, run with ``C:\prerequisites\nsudo\NSudo.exe`` if you encounter any permission errors
 
-or
+- Some locations you may want to review for leftover bloatware and unwanted shortcuts
 
+    - ``"C:\"``
+    - ``"C:\ProgramData\Microsoft\Windows\Start Menu\Programs"``
+    - ``"C:\Program Files"``
+    - ``"C:\ProgramData"``
+    - ``"C:\Windows\Prefetch"``
+    - ``"C:\Windows\SoftwareDistribution\download"``
+    - ``"C:\Windows\Temp"``
+    - ``"%userprofile%\AppData"``
+    - ``"%userprofile%\AppData\Local\Temp"``
+    - ``"%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs"``
+    - ``"%userprofile%\Downloads"``
 
-Disk Cleanup should be configured.
+    OR
 
-Open CMD and enter the command below. Tick all of the boxes and press OK.
+    - Open CMD and the command below to open all folders listed above at once
 
-```cleanmgr /sageset:50```
-Execute Disk Cleanup
+        ```bat
+        for %a in ("C:\", "C:\ProgramData\Microsoft\Windows\Start Menu\Programs", "C:\Program Files", "C:\ProgramData", "C:\Windows\Prefetch", "C:\Windows\SoftwareDistribution\download", "C:\Windows\Temp", "%userprofile%\AppData", "%userprofile%\AppData\Local\Temp", "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs", "%userprofile%\Downloads") do (explorer %a)
+        ```
 
-```Cleanmgr /sagerun:50```
+- Clear the PATH user environment variable of locations pointing to Windows bloatware folders
 
-Then, in Task Scheduler, delete or disable all of the tasks.
+- Configure Disk Cleanup
+
+    - Open CMD and enter the command below, tick all of the boxes, press **OK**
+
+        ```bat
+        cleanmgr /sageset:50
+        ```
+    - Run Disk Cleanup
+
+        ```bat
+        cleanmgr /sagerun:50
+        ```
+
+## Task Scheduler and Startup Apps
+In Task Scheduler, delete or disable all of the tasks.
 
 Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
 If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app.
 
+## Defrag
 Now that we have done all that, we can discuss defragging programs.
 
-do not use;
+- do not use
 O&O Defrag
 UltraDefrag
 Defraggler
