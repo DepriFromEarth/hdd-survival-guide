@@ -153,6 +153,7 @@ Avoid tapping the drive or a rumbly environment since this will affect the phsyi
 
 A video to check if your hard drive is dying: https://www.youtube.com/watch?v=OGOHA-t6j6M
 
+## If you have Linux procede here
 A Linux Section will be added later
 
 Now lets boot into BIOS and look for storage configuration. Find your hard drive and set the SATA controller to ACHI. It should be like this by default but if it isn't enable it doing so will enable NCQ and allows the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
