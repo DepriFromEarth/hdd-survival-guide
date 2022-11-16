@@ -185,3 +185,5 @@ Enter BIOS and search for the storage configuration. Find your hard drive and se
 
 ## Credits
 Thank you amitxv, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
+
+- Special thanks to Cynar for telling me to put this on github.
