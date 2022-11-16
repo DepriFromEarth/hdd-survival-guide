@@ -1,7 +1,7 @@
 # hdd-survival-guide
 A guide for people still on HDDs in the modern age where SSDs control the world!
 
-Questions you should ask yourself before starting this guide;
+##Questions you should ask yourself before starting this guide;
 
 1. Do I have and SSD and HDD? If you do then follow this video. https://www.youtube.com/watch?v=QG4LXw4Nd5U
 
@@ -9,7 +9,7 @@ Questions you should ask yourself before starting this guide;
 
 3. Am I on Windows or Linux?
 
-If you have Windows procede here.
+##If you have Windows procede here.
 
 Before we start we have to find out which type of BIOS we have so we can choose the proper partitioning style.
 After we find this out we can wipe the drive and install windows again if we have the improper style for whatever reason.
