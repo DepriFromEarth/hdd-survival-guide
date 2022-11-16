@@ -102,11 +102,11 @@ reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" 
 Now we will look at cleaning up junk files or unwanted programs.
 
 I recommend the following programs for junk removal:
-Bleachbit (FOSS)
-Cleanmgr+ (FOSS)
-BCUninstaller (FOSS)
-RevoUninstaller
-Autoruns
+- Bleachbit (FOSS)
+- Cleanmgr+ (FOSS)
+- BCUninstaller (FOSS)
+- RevoUninstaller
+- Autoruns
 I suggest using the portable versions of these programs.
 
 If you do not wish to use a program for whatever reason and just use the Windows tools to clean your system, continue here.
