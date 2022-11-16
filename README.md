@@ -1,7 +1,7 @@
 # hdd-survival-guide
 A guide for people still on HDDs in the modern age where SSDs control the world!
 
-##Questions you should ask yourself before starting this guide;
+## Questions you should ask yourself before starting this guide;
 
 1. Do I have and SSD and HDD? If you do then follow this video. https://www.youtube.com/watch?v=QG4LXw4Nd5U
 
