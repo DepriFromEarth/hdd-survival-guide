@@ -107,6 +107,7 @@ I recommend the following programs for junk removal:
 - BCUninstaller (FOSS)
 - RevoUninstaller
 - Autoruns
+
 I suggest using the portable versions of these programs.
 
 If you do not wish to use a program for whatever reason and just use the Windows tools to clean your system, continue here.
