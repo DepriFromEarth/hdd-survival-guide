@@ -84,10 +84,10 @@ I personally think you should disable Event Trace Sessions, but if you need them
 
 Create registry files to toggle event trace sessions. Programs that rely on event tracers of this type will not be able to log data until the required sessions are restored, which is the purpose of creating two registry files to toggle between them (an identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the C: directory. As with the service scripts, these registry files must be run with NSudo. - Amit
 
-```reg export "HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlWMIAutologger" "C:ets-enable.reg"
+reg export "HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlWMIAutologger" "C:ets-enable.reg"
 >> "C:ets-disable.reg" echo Windows Registry Editor Version 5.00
 >> "C:ets-disable.reg" echo
->> "C:ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]```
+>> "C:ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
 
 ## Clean Up
 Now we will look at cleaning up junk files or unwanted programs.
@@ -135,7 +135,7 @@ If you are on Windows 10+, you'll have to open up Task Manager and disable start
 Now that we have done all that, we can discuss defragging programs.
 
 do not use;
-```O&O Defrag
+O&O Defrag
 UltraDefrag
 Defraggler
 Auslogics disk defrag
@@ -153,7 +153,7 @@ Condusiv Diskeeper
 Baidu PC is faster for Windows
 MyDefrag
 VoptXP
-etc.```
+etc.
 
 I can only suggest using Contig or the default Windows defragmenter.
 Contig
