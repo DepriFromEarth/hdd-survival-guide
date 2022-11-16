@@ -15,8 +15,9 @@ https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#windows
 If you are on Linux, proceed here.
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#linux
 
-## Windows
+# Windows
 
+## Partition Style
 Before we start, we have to find out which type of BIOS we have so we can choose the proper partitioning style.
 After we find this out, we can wipe the drive and install Windows again if we have the improper style for whatever reason.
 If you are already using the proper style, you can skip this step.
@@ -36,9 +37,10 @@ Do not try to mix and match GPT and MBR partitioning styles with each other beca
 
 There are multiple ways to reinstall Windows, so I will not go over that here, but I suggest using Rufus and selecting the right partition style, then burning the desired iso to the USB.
 
+## Short Stroke
 Now that we have reinstalled Windows or simply checked that everything is okay, we will short-stroke our hard drive to increase the minimum speeds of the drive.
-Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
-Here's another link to HDD Tune:http://www.hdtune.com/download.html
+- Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
+- Here's the official link to HDD Tune:http://www.hdtune.com/download.html
 
 Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
 
