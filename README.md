@@ -52,6 +52,8 @@ xbootmgr -trace boot -prepSystem -verboseReadyBoot
 
 DON'T USE OTHER DEFRAGMENTATION PROGRAMS AFTER THE OPTIMIZATION, USE ONLY THE INCLUDED MS TOOL, BECAUSE EVERY TOOL PLACES THE FILES AT A DIFFERENT OFFSET ON YOUR HDD, BECAUSE ALL TOOL THINK THEY KNOW IT BETTER!
 
+I suggest leaving write-buffer cache on and it should be by default but if you are worried about data loss its completely fine to disable it but speeds may suffer. You can check if it on by opening Run and typing "devmgmt.msc" look for "Disk drives" collapse the section and right click your desired drive then goto policies to disable or enable it.
+
 Now we will optimize the file system. I will being using changes suggest by amitxv
 
 Open CMD & enter the commands below.
@@ -153,4 +155,4 @@ A video to check if your hard drive is dying: https://www.youtube.com/watch?v=OG
 
 A Linux Section will be added later
 
-
+Now lets boot into BIOS and look for storage configuration. Find your hard drive and set the SATA controller to ACHI. It should be like this by default but if it isn't enable it doing so will enable NCQ and allows the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
