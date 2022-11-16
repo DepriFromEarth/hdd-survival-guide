@@ -42,6 +42,7 @@ Now that we have reinstalled Windows or simply checked that everything is okay, 
 - Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
 - Here's the official link to HDD Tune:http://www.hdtune.com/download.html
 
+## Enabling Prefetching
 Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
 
 After that, we need to enable a couple services and set them to automatic.
@@ -56,12 +57,14 @@ Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory M
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
 Now open a command prompt with admin rights and type
---trace boot --prepsystem --verboseReadyBoot xbootmgr
+```--trace boot --prepsystem --verboseReadyBoot xbootmgr```
 
 Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better!
 
+## Write Buffer Cache
 I suggest leaving the write-buffer cache on, and it should be by default, but if you are worried about data loss, it's completely fine to disable it, but speeds may suffer. You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
 
+## File System
 Now we will optimize the file system. Amitxv's suggestions for changes will be implemented.
 
 Open CMD and enter the commands below.
@@ -76,15 +79,17 @@ Enabling delete notifications (also known as trim or unmap) should be enabled by
 
 fsutil behavior disableeletenotify set to 0.
 
+## Configure Event Trace Sessions
 I personally think you should disable Event Trace Sessions, but if you need them for logging
 
-Create registry files to toggle event trace sessions. Programs that rely on event tracers of this type will not be able to log data until the required sessions are restored, which is the purpose of creating two registry files to toggle between them (an identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the C: directory. As with the service scripts, these registry files must be run with NSudo.
+Create registry files to toggle event trace sessions. Programs that rely on event tracers of this type will not be able to log data until the required sessions are restored, which is the purpose of creating two registry files to toggle between them (an identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the C: directory. As with the service scripts, these registry files must be run with NSudo. - Amit
 
-reg export "HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlWMIAutologger" "C:ets-enable.reg"
+```reg export "HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlWMIAutologger" "C:ets-enable.reg"
 >> "C:ets-disable.reg" echo Windows Registry Editor Version 5.00
 >> "C:ets-disable.reg" echo
->> "C:ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
+>> "C:ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]```
 
+## Clean Up
 Now we will look at cleaning up junk files or unwanted programs.
 
 I recommend the following programs for junk removal:
@@ -112,16 +117,15 @@ Some locations you may want to review for leftover bloatware and unwanted shortc
 
 or
 
-Open CMD and use the command below to open all folders listed above at once.
-for %a in (C:\", C:ProgramDataMicrosoftWindowsStarttMenuProgramss", C:Programm Files", C:ProgramDataa", C:WindowsSoftwareDistributiondownloadd", C:WindowsTempp", "userprofile%AppDataa", "userprofile%AppDataLocalTempp", "userprofile%AppDataRoamingMicrosoftWindowsStarttMenuProgramss", "userprofile%Downloadss") do (explorer %a)
+
 Disk Cleanup should be configured.
 
 Open CMD and enter the command below. Tick all of the boxes and press OK.
 
-cleanmgr /sageset:50
+```cleanmgr /sageset:50```
 Execute Disk Cleanup
 
-cleanmgr /sagerun:50
+```Cleanmgr /sagerun:50```
 
 Then, in Task Scheduler, delete or disable all of the tasks.
 
@@ -131,7 +135,7 @@ If you are on Windows 10+, you'll have to open up Task Manager and disable start
 Now that we have done all that, we can discuss defragging programs.
 
 do not use;
-O&O Defrag
+```O&O Defrag
 UltraDefrag
 Defraggler
 Auslogics disk defrag
@@ -149,12 +153,15 @@ Condusiv Diskeeper
 Baidu PC is faster for Windows
 MyDefrag
 VoptXP
-etc.
+etc.```
 
 I can only suggest using Contig or the default Windows defragmenter.
-https://docs.microsoft.com/en-us/sysinternals/downloads/contig
-https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
-https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
+Contig
+- https://docs.microsoft.com/en-us/sysinternals/downloads/contig
+Contig Guide
+- https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
+A GUI for Contig
+- https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
 
 When should I defrag? when the system is around 56% fragmented. Constantly defragging may prematurely kill your drive.
 Avoid tapping the drive or a rumbly environment since this will affect the phsyical header.
