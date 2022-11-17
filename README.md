@@ -232,6 +232,7 @@ Now for the defrag, simply type
 ```xfs_fsr```
 
 - More on defragging EXT4 and XFS here:
+
     - https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
 
     - https://man7.org/linux/man-pages/man8/e4defrag.8.html
