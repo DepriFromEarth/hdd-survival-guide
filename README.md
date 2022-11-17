@@ -186,7 +186,7 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 
 - EXT4
 
-First, we want to check if we should even defrag
+First, we want to check if we should even defrag.
 
 Open up a terminal and type
 
@@ -194,7 +194,7 @@ Open up a terminal and type
 
 This will check your current mounted drive and show you which files are fragmented and if you need to defrag or not.
 
-To defrag EXT4, open up a terminal and type
+To defrag EXT4, open a terminal and start typing;
 
 ```sudo e4defrag /``` 
 
