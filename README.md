@@ -175,7 +175,13 @@ Now that we have done all that, we can discuss defragging programs.
 When should I defrag? when the system is around 56% fragmented. Constantly defragging may prematurely kill your drive.
 Avoid tapping the drive or a rumbly environment since this will affect the phsyical header.
 
-A video to check if your hard drive is dying https://www.youtube.com/watch?v=OGOHA-t6j6M
+A video to check if your hard drive is dying: https://www.youtube.com/watch?v=OGOHA-t6j6M
+
+## TeraCopy
+https://www.codesector.com/teracopy
+
+I highly suggest using this program even if you have an SSD.
+Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
 
 ## Linux
 A Linux section will be added later.
