@@ -172,22 +172,79 @@ Now that we have done all that, we can discuss defragging programs.
  
   - Contig GUI: https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
 
-When should I defrag? when the system is around 56% fragmented. Constantly defragging may prematurely kill your drive.
-Avoid tapping the drive or a rumbly environment since this will affect the phsyical header.
-
-A video to check if your hard drive is dying: https://www.youtube.com/watch?v=OGOHA-t6j6M
-
 ## TeraCopy
 https://www.codesector.com/teracopy
 
 I highly suggest using this program even if you have an SSD.
 Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
 
+## Check if your Hard Drive is dying
+
+Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
+
 ## Linux
-A Linux section will be added later.
+
+- EXT4
+
+First we want to check if we should even defrag
+
+Open up a terminal and type
+
+```sudo e4defrag -c /```
+
+This will check your current mounted drive and show you which files are fraggmented and if you need to defrag or not.
+
+To defrag on EXT4 open up a terminal and type
+
+```sudo e4defrag /``` 
+
+This will defrag the entire drive
+
+- XFS ( The Filesystem I suggest using )
+
+To check if we are using XFS type this into a terminal.
+
+```blkid```
+
+Something like this will show up
+
+[root@nerdos ~]# blkid
+/dev/xvda1: UUID="1f790447-ebef-4ca0-b229-d0bc1985d47f" TYPE="xfs"
+
+Now that we know we are using XFS let's continue
+
+Then type
+
+```xfs_db -r /dev/xvda1```
+
+Then 
+
+```frag -d```
+
+Then 
+
+```frag -f```
+
+This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
+
+Now onto the defrag, just type 
+
+```xfs_fsr```
+
+- More on Defragging EXT4 and XFS here:
+    - https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
+
+    - https://man7.org/linux/man-pages/man8/e4defrag.8.html
+
+
 
 ## NCQ
 Enter BIOS and search for the storage configuration. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
+
+## Notes
+
+When should I defrag? when the system is around 56% fragmented. Constantly defragging may prematurely kill your drive.
+Avoid tapping the drive or a rumbly environment since this will affect the phsyical header.
 
 ## Credits
 Thank you amitxv, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
