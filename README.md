@@ -186,56 +186,55 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 
 - EXT4
 
-First we want to check if we should even defrag
+First, we want to check if we should even defrag
 
 Open up a terminal and type
 
 ```sudo e4defrag -c /```
 
-This will check your current mounted drive and show you which files are fraggmented and if you need to defrag or not.
+This will check your current mounted drive and show you which files are fragmented and if you need to defrag or not.
 
-To defrag on EXT4 open up a terminal and type
+To defrag EXT4, open up a terminal and type
 
-```sudo e4defrag /``` 
+```sudo e4defrag /``` 
 
-This will defrag the entire drive
+This will defrag the entire drive.
 
-- XFS ( The Filesystem I suggest using )
+- XFS (theefilesystemm I suggest using )
 
 To check if we are using XFS type this into a terminal.
 
 ```blkid```
 
-Something like this will show up
+Something like this will show up.
 
 
 ```/dev/xvda1: UUID="1f790447-ebef-4ca0-b229-d0bc1985d47f" TYPE="xfs"```
 
-Now that we know we are using XFS let's continue
+Now that we know we are using XFS, let's continue.
 
 Then type
 
 ```xfs_db -r /dev/xvda1```
 
-Then 
+Then 
 
 ```frag -d```
 
-Then 
+Then 
 
 ```frag -f```
 
-This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
+This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
 
-Now onto the defrag, just type 
+Now for the defrag, simply type
 
 ```xfs_fsr```
 
-- More on Defragging EXT4 and XFS here:
-    - https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
+- More on defragging EXT4 and XFS here:
+    - https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
 
-    - https://man7.org/linux/man-pages/man8/e4defrag.8.html
-
+    - https://man7.org/linux/man-pages/man8/e4defrag.8.html
 
 
 ## NCQ
