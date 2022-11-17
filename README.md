@@ -200,7 +200,7 @@ To defrag EXT4, open a terminal and start typing;
 
 This will defrag the entire drive.
 
-- XFS (the filesystemm I suggest using )
+- XFS (the filesystem I suggest using )
 
 To check if we are using XFS type this into a terminal.
 
