@@ -208,8 +208,8 @@ To check if we are using XFS type this into a terminal.
 
 Something like this will show up
 
-[root@nerdos ~]# blkid
-/dev/xvda1: UUID="1f790447-ebef-4ca0-b229-d0bc1985d47f" TYPE="xfs"
+
+```/dev/xvda1: UUID="1f790447-ebef-4ca0-b229-d0bc1985d47f" TYPE="xfs"```
 
 Now that we know we are using XFS let's continue
 
