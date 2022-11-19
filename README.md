@@ -207,15 +207,26 @@ or
 
     swapoff /dev/sdxy -a
 
-switch to deactivate all swap space.
+To deactivate all swap space.
 
 Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run ``systemctl --type swap`` to find the responsible .swap unit and mask it.
+
+or
+
+open /etc/fstab file, search for the swap line and comment the entire line by adding a # (hashtag) sign in front of the line - https://www.tecmint.com/disable-swap-partition-in-centos-ubuntu/
+
 
 Disabling, "can sometimes lead to a degradation, since it decreases the memory available for virtual file system (VFS) caches, causing more frequent and costly disk usage. - https://wiki.archlinux.org/title/Swap
 
 So if you want to keep swap because of this let's first check our "swappiness"
 
+    sysctl vm.swappiness
 
+If it is not 10 let's change it to that this will keep our swappiness but not get rid of it in low memory cases.
+
+Open up /etc/sysctl.conf with your desired text editor and type this at the end of the config.
+
+    vm.swappiness = 10
 
 ## File Systems
 
