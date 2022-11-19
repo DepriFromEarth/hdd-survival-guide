@@ -42,6 +42,8 @@ Now that we have reinstalled Windows or simply checked that everything is okay, 
 - Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
 - Here's the official link to HDD Tune: http://www.hdtune.com/download.html
 
+You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
+
 ## Enabling Prefetching
 Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
 
