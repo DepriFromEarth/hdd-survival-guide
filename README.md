@@ -155,7 +155,7 @@ If you do not wish to use a program for whatever reason and just use the Windows
         cleanmgr /sagerun:50
         ```
 
-## Task Scheduler and Startup Apps ( Boot Times )
+## Task Scheduler and Startup Apps
 In Task Scheduler, delete or disable all of the tasks.
 
 Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
@@ -165,11 +165,9 @@ Now open a command prompt with admin rights and type
 
     -xbootmgr -trace boot -prepSystem -verboseReadyBoot
     
+Now your PC will have been restarted six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
 
-
-Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better!
-
-Now your PC will have been restarted six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is finished, you'll notice a huge improvement in startup.
+Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better when they don't!
 
 ## Defrag
 Now that we have done all that, we can discuss defragging programs.
@@ -192,7 +190,7 @@ Instead of copying files all at once TeraCopy will copy one at a time to improve
 
 Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
 
-# Linux
+# Linux ( Most of this stuff is already documented, but I will go over it here. )
 
 ## Partition Alignment
 
@@ -234,41 +232,45 @@ Types of file systems: https://wiki.archlinux.org/title/File_systems
 
 I will only go over EXT4 and XFS here because these are the only ones I think you should be using.
 
-- EXT4 Defrag
+- EXT4 
 
-    First, we want to check if we should even defrag.
 
-    Open up a terminal and type
 
-        sudo e4defrag -c /
+    - Defrag
 
-    This will check your current mounted drive and show you which files are fragmented and if you need to defrag or not.
+        First, we want to check if we should even defrag.
 
-    To defrag EXT4, open a terminal and start typing;
+        Open up a terminal and type
 
-        sudo e4defrag /
+            sudo e4defrag -c /
 
-    This will defrag the entire drive.
+        This will check your current mounted drive and show you which files are fragmented and if you need to defrag or not.
 
-- XFS Defrag
+        To defrag EXT4, open a terminal and start typing;
 
-    Type in a terminal;
+            sudo e4defrag /
 
-        xfs_db -r /dev/xvda1
+        This will defrag the entire drive.
 
-    Then,
+    - XFS Defrag
 
-        frag -d
+        Type in a terminal;
 
-    Then,
+            xfs_db -r /dev/xvda1
 
-        frag -f
+        Then,
 
-    This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
+            frag -d
 
-    Now for the defrag, simply type
+        Then,
 
-        xfs_fsr
+            frag -f
+
+        This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
+
+        Now for the defrag, simply type
+
+            xfs_fsr
 
 - More on defragging EXT4 and XFS here along with performance increases:
 
@@ -279,6 +281,14 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
     - https://man7.org/linux/man-pages/man8/e4defrag.8.html
 
     - https://wiki.archlinux.org/title/Ext4#Improving_performance
+ 
+ # Startup apps
+ 
+ Show hidden startup apps:
+
+    sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
+    
+ Do not mindlessly disable things here. Disable what you think should be disabled, i.e., Bluetooth, if you don't use it.
 
 ## NCQ
 Enter BIOS and search for the storage configuration tab. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
