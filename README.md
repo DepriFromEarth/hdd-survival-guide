@@ -194,7 +194,8 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 
 If you want speed, disable it. To deactivate specific swap space:
 
-```swapoff /dev/sdxy```
+```swapoff /dev/sdxy
+```
 
 Disabling, "can sometimes lead to a degradation, since it decreases the memory available for virtual file system (VFS) caches, causing more frequent and costly disk usage. - https://wiki.archlinux.org/title/Swap
 
@@ -214,13 +215,15 @@ First, we want to check if we should even defrag.
 
 Open up a terminal and type
 
-```sudo e4defrag -c /```
+```sudo e4defrag -c /
+```
 
 This will check your current mounted drive and show you which files are fragmented and if you need to defrag or not.
 
 To defrag EXT4, open a terminal and start typing;
 
-```sudo e4defrag /``` 
+```sudo e4defrag /
+``` 
 
 This will defrag the entire drive.
 
@@ -228,32 +231,38 @@ This will defrag the entire drive.
 
 To check if we are using XFS type this into a terminal.
 
-```blkid```
+```blkid
+```
 
 Something like this will show up.
 
 
-```/dev/xvda1: UUID="1f790447-ebef-4ca0-b229-d0bc1985d47f" TYPE="xfs"```
+```/dev/xvda1: UUID="1f790447-ebef-4ca0-b229-d0bc1985d47f" TYPE="xfs"
+```
 
 Now that we know we are using XFS, let's continue.
 
 Then type
 
-```xfs_db -r /dev/xvda1```
+```xfs_db -r /dev/xvda1
+```
 
 Then 
 
-```frag -d```
+```frag -d
+```
 
 Then 
 
-```frag -f```
+```frag -f
+```
 
 This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
 
 Now for the defrag, simply type
 
-```xfs_fsr```
+```xfs_fsr
+```
 
 - More on defragging EXT4 and XFS here:
 
