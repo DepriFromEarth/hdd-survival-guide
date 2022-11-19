@@ -194,8 +194,7 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 
 If you want speed, disable it. To deactivate specific swap space:
 
-        ```swapoff /dev/sdxy
-        ```
+    swapoff /dev/sdxy
 
 Disabling, "can sometimes lead to a degradation, since it decreases the memory available for virtual file system (VFS) caches, causing more frequent and costly disk usage. - https://wiki.archlinux.org/title/Swap
 
