@@ -254,7 +254,7 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
 
         This will defrag the entire drive.
 
-   - XFS
+- XFS
 
     - Defrag
 
