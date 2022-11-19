@@ -104,11 +104,11 @@ reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" 
 Now we will look at cleaning up junk files or unwanted programs.
 
 I recommend the following programs for junk removal:
-- Bleachbit (FOSS)
-- Cleanmgr+ (FOSS)
-- BCUninstaller (FOSS)
-- RevoUninstaller
-- Autoruns
+- Bleachbit (FOSS) https://www.bleachbit.org/download/windows
+- Cleanmgr+ (FOSS) https://github.com/builtbybel/CleanmgrPlus
+- BCUninstaller (FOSS) https://www.bcuninstaller.com/
+- RevoUninstaller https://www.revouninstaller.com/revo-uninstaller-free-download/
+- Autoruns: https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns
 
 I suggest using the portable versions of these programs.
 
@@ -294,6 +294,14 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
     sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
     
  Do not mindlessly disable things here. Disable what you think should be disabled, i.e., Bluetooth, if you don't use it.
+ 
+ # Clean Up
+
+This entirely depends on your package manager but Bleachbit is an option to clean up junk files along with Sweeper and Stacer.
+
+- https://www.bleachbit.org/download/linux
+- https://apps.kde.org/sweeper/
+- https://github.com/oguzhaninan/Stacer
 
 ## NCQ
 Enter BIOS and search for the storage configuration tab. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
