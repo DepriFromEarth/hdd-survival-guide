@@ -190,7 +190,9 @@ Instead of copying files all at once TeraCopy will copy one at a time to improve
 
 Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
 
-# Linux ( Most of this stuff is already documented, but I will go over it here. )
+# Linux
+
+( Most of this stuff is already documented, but I will go over it here. )
 
 ## Partition Alignment
 
