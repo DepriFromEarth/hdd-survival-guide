@@ -5,15 +5,19 @@ Questions you should ask yourself before starting this guide
 
 1. Do I have an SSD and HDD? If you do, then follow this video. https://www.youtube.com/watch?v=QG4LXw4Nd5U
 
-2. Do I have only one or more HDDs? If so, continue with the rest of the guide!
+2. Do I have multiple drives? If so, set them up as RAID. ( I will add this to the guide later )
 
-3. Am I on Windows or Linux?
+3. Do I have a traditional HDD? If so, continue with the rest of the guide!
+
+4. Am I on Windows or Linux?
+
 
 ## Where to Begin?
 - If you are on Windows, proceed here.
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#windows
 - If you are on Linux, proceed here.
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#linux
+
 
 # Windows
 
@@ -186,7 +190,25 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 
 ## Linux
 
-- EXT4
+## Swap
+
+If you want speed, disable it. To deactivate specific swap space:
+
+```swapoff /dev/sdxy```
+
+Disabling, "can sometimes lead to a degradation, since it decreases the memory available for virtual file system (VFS) caches, causing more frequent and costly disk usage. - https://wiki.archlinux.org/title/Swap
+
+So if you want to keep swap because of this let's first check our "swappiness"
+
+
+
+## File Systems
+
+Types of file systems: https://wiki.archlinux.org/title/File_systems
+
+I will only go over EXT4 and XFS here because these are the only ones I think you should be using.
+
+- EXT4 Defrag
 
 First, we want to check if we should even defrag.
 
@@ -202,7 +224,7 @@ To defrag EXT4, open a terminal and start typing;
 
 This will defrag the entire drive.
 
-- XFS (the filesystem I suggest using )
+- XFS Defrag
 
 To check if we are using XFS type this into a terminal.
 
@@ -241,7 +263,7 @@ Now for the defrag, simply type
 
 
 ## NCQ
-Enter BIOS and search for the storage configuration. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
+Enter BIOS and search for the storage configuration tab. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
 
 ## Notes
 
