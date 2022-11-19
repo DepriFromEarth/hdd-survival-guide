@@ -234,6 +234,10 @@ Types of file systems: https://wiki.archlinux.org/title/File_systems
 
 I will only go over EXT4 and XFS here because these are the only ones I think you should be using.
 
+Type this command into a terminal to figure out with filesystem we are using.
+
+    sudo blkid
+
 - EXT4 
 
     - Install E4rat
@@ -262,13 +266,13 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
 
         Type in a terminal;
 
-            xfs_db -r /dev/xvda1
+            sudo xfs_db -r /dev/x
 
         Then,
 
             frag -d
 
-        Then,
+        Then
 
             frag -f
 
