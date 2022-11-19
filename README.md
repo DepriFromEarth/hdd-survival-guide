@@ -161,11 +161,11 @@ If you do not wish to use a program for whatever reason and just use the Windows
         cleanmgr /sagerun:50
         ```
 
-## Task Scheduler and Startup Apps
+## Task Scheduler and Startup Apps ( Boot Times )
 In Task Scheduler, delete or disable all of the tasks.
 
 Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
-If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app.
+If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app. This will help decrease the boot time.
 
 ## Defrag
 Now that we have done all that, we can discuss defragging programs.
@@ -195,6 +195,13 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 If you want speed, disable it. To deactivate specific swap space:
 
     swapoff /dev/sdxy
+or
+
+    swapoff /dev/sdxy -a
+
+switch to deactivate all swap space.
+
+Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run ``systemctl --type swap`` to find the responsible .swap unit and mask it.
 
 Disabling, "can sometimes lead to a degradation, since it decreases the memory available for virtual file system (VFS) caches, causing more frequent and costly disk usage. - https://wiki.archlinux.org/title/Swap
 
