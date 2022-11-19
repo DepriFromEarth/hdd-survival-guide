@@ -276,15 +276,15 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
 
             xfs_fsr
 
-- More on defragging EXT4 and XFS here along with performance increases:
+    - More on defragging EXT4 and XFS here along with performance increases:
 
-    - https://wiki.archlinux.org/title/XFS#Performance
+        - https://wiki.archlinux.org/title/XFS#Performance
 
-    - https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
+        - https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
 
-    - https://man7.org/linux/man-pages/man8/e4defrag.8.html
+        - https://man7.org/linux/man-pages/man8/e4defrag.8.html
 
-    - https://wiki.archlinux.org/title/Ext4#Improving_performance
+        - https://wiki.archlinux.org/title/Ext4#Improving_performance
  
  # Startup apps
  
