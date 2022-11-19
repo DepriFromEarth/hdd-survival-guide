@@ -62,12 +62,6 @@ Then click Apply and OK.
 Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory ManagementPrefetchParameters] and then to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMe].
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
-Now open a command prompt with admin rights and type
-```-xbootmgr -trace boot -prepSystem -verboseReadyBoot```
-
-Now your PC will have been restarted six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboots were training for ReadyBoot. After the training is finished, you'll notice a huge improvement in startup.
-
-Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better!
 
 ## Write Buffer Cache
 I suggest leaving the write-buffer cache on, and it should be by default, but if you are worried about data loss, it's completely fine to disable it, but speeds may suffer. You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
@@ -166,6 +160,16 @@ In Task Scheduler, delete or disable all of the tasks.
 
 Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
 If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app. This will help decrease the boot time.
+
+Now open a command prompt with admin rights and type
+
+    -xbootmgr -trace boot -prepSystem -verboseReadyBoot
+    
+
+
+Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better!
+
+Now your PC will have been restarted six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is finished, you'll notice a huge improvement in startup.
 
 ## Defrag
 Now that we have done all that, we can discuss defragging programs.
