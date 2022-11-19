@@ -194,7 +194,7 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 
 ## Partition Alignment
 
-https://wiki.archlinux.org/title/Advanced_Format#Partition_alignment
+Aligning partitions correctly avoids excessive read-modify-write cycles. A typical practice for personal computers is to have each partition's start and size aligned to 1 MiB (1 048 576 bytes) marks. This covers all common page and block size scenarios, as it is divisible by all commonly used sizes—1 MiB, 512 KiB, 128 KiB, 4 KiB, and 512 B. - https://wiki.archlinux.org/title/Advanced_Format#Partition_alignment
 
 ## Swap
 
@@ -234,7 +234,9 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
 
 - EXT4 
 
+    - Install E4rat
 
+        E4rat is a preload application designed for the ext4 filesystem. It monitors files opened during boot, optimizes their placement on the partition to improve access time, and preloads them at the very beginning of the boot process.
 
     - Defrag
 
@@ -253,8 +255,6 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
         This will defrag the entire drive.
 
    - XFS
-
-
 
     - Defrag
 
