@@ -188,7 +188,11 @@ Instead of copying files all at once TeraCopy will copy one at a time to improve
 
 Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
 
-## Linux
+# Linux
+
+## Partition Alignment
+
+https://wiki.archlinux.org/title/Advanced_Format#Partition_alignment
 
 ## Swap
 
@@ -233,18 +237,7 @@ This will defrag the entire drive.
 
 - XFS Defrag
 
-To check if we are using XFS type this into a terminal.
-
-    blkid
-
-Something like this will show up.
-
-
-    /dev/xvda1: UUID="1f790447-ebef-4ca0-b229-d0bc1985d47f" TYPE="xfs"
-
-Now that we know we are using XFS, let's continue.
-
-Then type,
+Type in a terminal;
 
     xfs_db -r /dev/xvda1
 
@@ -262,12 +255,15 @@ Now for the defrag, simply type
 
     xfs_fsr
 
-- More on defragging EXT4 and XFS here:
+- More on defragging EXT4 and XFS here along with performance increases:
+
+    - https://wiki.archlinux.org/title/XFS#Performance
 
     - https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
 
     - https://man7.org/linux/man-pages/man8/e4defrag.8.html
 
+    - https://wiki.archlinux.org/title/Ext4#Improving_performance
 
 ## NCQ
 Enter BIOS and search for the storage configuration tab. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
