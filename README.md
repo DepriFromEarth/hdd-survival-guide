@@ -238,6 +238,12 @@ Type this command into a terminal to figure out with filesystem we are using.
 
     sudo blkid
 
+- Disabling access time update. This works on both filesystems listed here
+
+    With sudo privileges and your preferred text editor, open /etc/fstab and add "noatime" after default with a, (comma) symbol, as shown below. 
+
+        /dev/sda5    /    ext4    defaults,noatime    0    1
+
 - EXT4 
 
     - Install E4rat
