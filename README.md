@@ -192,7 +192,7 @@ Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/wa
 
 # Linux
 
-( Most of this stuff is already documented, but I will go over it here. )
+Most of this stuff is already documented, but I will go over it here.
 
 ## Partition Alignment
 
