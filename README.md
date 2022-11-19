@@ -172,7 +172,7 @@ Now that we have done all that, we can discuss defragging programs.
 
 - I can only suggest using Contig or the default Windows defragmenter.
 
-  -  Contig: https://docs.microsoft.com/en-us/sysinternals/downloads/contig
+  - Contig: https://docs.microsoft.com/en-us/sysinternals/downloads/contig
 
   - Contig Guide: https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
  
@@ -221,39 +221,39 @@ I will only go over EXT4 and XFS here because these are the only ones I think yo
 
 - EXT4 Defrag
 
-First, we want to check if we should even defrag.
+    First, we want to check if we should even defrag.
 
-Open up a terminal and type
+    Open up a terminal and type
 
-    sudo e4defrag -c /
+        sudo e4defrag -c /
 
-This will check your current mounted drive and show you which files are fragmented and if you need to defrag or not.
+    This will check your current mounted drive and show you which files are fragmented and if you need to defrag or not.
 
-To defrag EXT4, open a terminal and start typing;
+    To defrag EXT4, open a terminal and start typing;
 
-    sudo e4defrag /
+        sudo e4defrag /
 
-This will defrag the entire drive.
+    This will defrag the entire drive.
 
 - XFS Defrag
 
-Type in a terminal;
+    Type in a terminal;
 
-    xfs_db -r /dev/xvda1
+        xfs_db -r /dev/xvda1
 
-Then,
+    Then,
 
-    frag -d
+        frag -d
 
-Then,
+    Then,
 
-    frag -f
+        frag -f
 
-This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
+    This will show us our fragmentation levels. After we are done checking them simply type quit to exit xfs_db. 
 
-Now for the defrag, simply type
+    Now for the defrag, simply type
 
-    xfs_fsr
+        xfs_fsr
 
 - More on defragging EXT4 and XFS here along with performance increases:
 
