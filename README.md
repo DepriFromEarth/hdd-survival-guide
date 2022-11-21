@@ -113,8 +113,6 @@ I suggest using the portable versions of these programs.
 
 If you do not wish to use a program for whatever reason and just use the Windows tools to clean your system, continue below.
 
-## Cleanup
-
 - Open Autoruns and remove any unwanted programs such as game launchers. Remove all obsolete entries with a yellow label, run with NSudo if you encounter any permission errors
 
 - Some locations you may want to review for leftover bloatware and unwanted shortcuts
@@ -302,7 +300,7 @@ Type this command into a terminal to figure out with filesystem we are using.
 
     - https://wiki.archlinux.org/title/Ext4#Improving_performance
  
- # Startup apps
+ ## Startup apps
  
  Show hidden startup apps:
 
@@ -310,7 +308,7 @@ Type this command into a terminal to figure out with filesystem we are using.
     
  Do not mindlessly disable things here. Disable what you think should be disabled, i.e., Bluetooth, if you don't use it.
  
- # Clean Up
+ ## Clean Up
 
 This entirely depends on your package manager but Bleachbit is an option to clean up junk files along with Sweeper and Stacer.
 
@@ -318,15 +316,15 @@ This entirely depends on your package manager but Bleachbit is an option to clea
 - https://apps.kde.org/sweeper/
 - https://github.com/oguzhaninan/Stacer
 
-## NCQ
+# NCQ
 Enter BIOS and search for the storage configuration tab. Find your hard drive and set the SATA controller to ACHI. It should be like this by default, but if it isn't, enable it. Doing so will enable NCQ and allow the physical header to optimize where files should go. https://en.wikipedia.org/wiki/Native_Command_Queuing
 
-## Notes
+# Notes
 
 When should I defrag? when the system is around 56% fragmented. Constantly defragging may prematurely kill your drive.
 Avoid tapping the drive or a rumbly environment since this will affect the phsyical header.
 
-## Credits
+# Credits
 Thank you amitxv, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
 
 - Special thanks to Cynar for telling me to put this on github.
