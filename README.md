@@ -41,12 +41,7 @@ Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will 
 
 - There are multiple ways to reinstall Windows, so I will not go over that here, but I suggest using Rufus and selecting the right partition style, then burning the desired iso to the USB.
 
-## Short Stroke
-Now that we have reinstalled Windows or simply checked that everything is okay, we will short-stroke our hard drive to increase the minimum speeds of the drive.
-- Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
-- Here's the official link to HDD Tune: http://www.hdtune.com/download.html
-
-You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
+Now that we have reinstalled Windows or simply checked that everything is okay, let's continue down below.
 
 ## Enabling Prefetching
 After that, we need to enable a couple services and set them to automatic.
@@ -59,6 +54,15 @@ Then click Apply and OK.
 2. Type "regedit" and press Enter.
 Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory ManagementPrefetchParameters] and then to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMe].
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
+
+## Short Stroke
+ We will short-stroke our hard drive to increase the minimum speeds of the drive.
+- Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
+- Here's the official link to HDD Tune: http://www.hdtune.com/download.html
+
+You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
+
+
 
 
 ## Write Buffer Cache
