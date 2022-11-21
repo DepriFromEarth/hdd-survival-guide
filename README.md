@@ -62,9 +62,6 @@ Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
 You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
 
-
-
-
 ## Write Buffer Cache
 I suggest leaving the write-buffer cache on, and it should be by default, but if you are worried about data loss, it's completely fine to disable it, but speeds may suffer. You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
 
@@ -92,7 +89,7 @@ Open CMD & enter the commands below.
     ```
     
 ## Configure Event Trace Sessions
-I personally think you should disable Event Trace Sessions, but if you need them for logging
+I personally think you should disable Event Trace Sessions, but if you need them for logging,
 
 Create registry files to toggle event trace sessions. Programs that rely on event tracers such will not be able to log data until the required sessions are restored which is the purpose of creating two registry files to toggle between them (identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the ``C:\`` directory. As with the services scripts, these registry files must be ran with NSudo.
 
@@ -163,16 +160,6 @@ In Task Scheduler, delete or disable all of the tasks.
 Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
 If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app. This will help decrease the boot time.
 
-Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
-
-Now open a command prompt with admin rights and type
-
-    -xbootmgr -trace boot -prepSystem -verboseReadyBoot
-    
-Now your PC restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
-
-Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better when they don't!
-
 ## Defrag
 Now that we have done all that, we can discuss defragging programs.
 
@@ -183,6 +170,18 @@ Now that we have done all that, we can discuss defragging programs.
   - Contig Guide: https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
  
   - Contig GUI: https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
+
+## Optimizing file placement
+
+Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
+
+Now open a command prompt with admin rights and type
+
+    -xbootmgr -trace boot -prepSystem -verboseReadyBoot
+    
+Now your PC restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
+
+Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better when they don't!
 
 ## TeraCopy
 https://www.codesector.com/teracopy
