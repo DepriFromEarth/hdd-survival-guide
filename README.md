@@ -64,59 +64,6 @@ Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 ## Write Buffer Cache
 I suggest leaving the write-buffer cache on, and it should be by default, but if you are worried about data loss, it's completely fine to disable it, but speeds may suffer. You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
 
-## Clean Up
-Now we will look at cleaning up junk files or unwanted programs.
-
-I recommend the following programs for junk removal:
-- Bleachbit (FOSS) https://www.bleachbit.org/download/windows
-- Cleanmgr+ (FOSS) https://github.com/builtbybel/CleanmgrPlus
-- BCUninstaller (FOSS) https://www.bcuninstaller.com/
-- RevoUninstaller https://www.revouninstaller.com/revo-uninstaller-free-download/
-- Autoruns: https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns
-
-I suggest using the portable versions of these programs.
-
-If you do not wish to use a program for whatever reason and just use the Windows tools to clean your system, continue below.
-
-- Open Autoruns and remove any unwanted programs such as game launchers. Remove all obsolete entries with a yellow label, run with NSudo if you encounter any permission errors
-
-- Some locations you may want to review for leftover bloatware and unwanted shortcuts
-
-    - ``"C:\"``
-    - ``"C:\ProgramData\Microsoft\Windows\Start Menu\Programs"``
-    - ``"C:\Program Files"``
-    - ``"C:\ProgramData"``
-    - ``"C:\Windows\Prefetch"``
-    - ``"C:\Windows\SoftwareDistribution\download"``
-    - ``"C:\Windows\Temp"``
-    - ``"%userprofile%\AppData"``
-    - ``"%userprofile%\AppData\Local\Temp"``
-    - ``"%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs"``
-    - ``"%userprofile%\Downloads"``
-
-    OR
-
-    - Open CMD and the command below to open all folders listed above at once
-
-        ```bat
-        for %a in ("C:\", "C:\ProgramData\Microsoft\Windows\Start Menu\Programs", "C:\Program Files", "C:\ProgramData", "C:\Windows\Prefetch", "C:\Windows\SoftwareDistribution\download", "C:\Windows\Temp", "%userprofile%\AppData", "%userprofile%\AppData\Local\Temp", "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs", "%userprofile%\Downloads") do (explorer %a)
-        ```
-
-- Clear the PATH user environment variable of locations pointing to Windows bloatware folders
-
-- Configure Disk Cleanup
-
-    - Open CMD and enter the command below, tick all of the boxes, press **OK**
-
-        ```bat
-        cleanmgr /sageset:50
-        ```
-    - Run Disk Cleanup
-
-        ```bat
-        cleanmgr /sagerun:50
-        ```
-
 ## Task Scheduler and Startup Apps
 In Task Scheduler, delete or disable all of the tasks.
 
