@@ -312,3 +312,32 @@ Avoid tapping the drive or a rumbly environment since this will affect the phsyi
 Thank you amitxv, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
 
 - Special thanks to Cynar for telling me to put this on github.
+
+# Research and all links in the guide
+
+https://msfn.org/board/topic/140262-how-to-speed-up-boot-process-under-windows-vista-or-windows-7/
+https://www.youtube.com/watch?v=OGOHA-t6j6M
+https://www.youtube.com/watch?v=QG4LXw4Nd5U
+https://www.youtube.com/watch?v=toLYV7th0L8
+https://learn.microsoft.com/en-us/troubleshoot/windows-server/backup-and-storage/turn-disk-write-caching-on-off
+https://en.wikipedia.org/wiki/Native_Command_Queuing
+http://www.hdtune.com/download.html
+https://github.com/Open-Shell/Open-Shell-Menu
+https://www.voidtools.com/
+https://www.codesector.com/teracopy
+https://docs.microsoft.com/en-us/sysinternals/downloads/contig
+https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
+https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
+https://www.bleachbit.org/download/linux
+https://apps.kde.org/sweeper/
+https://github.com/oguzhaninan/Stacer
+https://wiki.archlinux.org/title/XFS#Performance
+https://www.rootusers.com/how-to-defragment-an-xfs-file-system/
+https://man7.org/linux/man-pages/man8/e4defrag.8.html
+https://wiki.archlinux.org/title/Ext4#Improving_performance
+https://wiki.archlinux.org/title/File_systems
+https://wiki.archlinux.org/title/Swap
+https://www.tecmint.com/disable-swap-partition-in-centos-ubuntu/
+https://wiki.archlinux.org/title/Advanced_Format#Partition_alignment
+
+
