@@ -162,8 +162,6 @@ Open CMD & enter the commands below.
 
 Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
 
-If you remember XP days, their was a tool called BootVis. The optimization is similar to this here, but the difference is, that is only starts the integrated MS defragmentation program for a better HDD layout, because XP doesn't have ReadyBoot.
-
 ## Compare boot times
 
 To see the improvement in time, run these 2 commands:
