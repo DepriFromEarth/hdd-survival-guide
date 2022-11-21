@@ -53,11 +53,11 @@ You want to keep your OS near the beginning of the drive (15-20GB Partition depe
 After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
 
-1. Open Run once again and type "services.msc." Find Superfetch or Sysmain on Windows 10 and later.
+Open Run once again and type "services.msc." Find Superfetch or Sysmain on Windows 10 and later.
 Set the startup type to automatic and start the services.
 Then click Apply and OK.
 
-2. Type "regedit" and press Enter.
+Type "regedit" and press Enter.
 Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory ManagementPrefetchParameters] and then to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMe].
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
@@ -80,8 +80,8 @@ Indexing is great for the Windows search feature, but it stinks in practice. Ope
 
 Open Explorer. Right-click the drive you want to work with and then click Properties. On the General tab, deactivate the Allow Files on This Drive to Have Contents Indexed in Addition to File Properties check box. Click OK.
 
-OpenShell: https://github.com/Open-Shell/Open-Shell-Menu
-Everything: https://www.voidtools.com/
+- OpenShell: https://github.com/Open-Shell/Open-Shell-Menu
+- Everything: https://www.voidtools.com/
 
 ## Disabling Compression and Encryption
 
