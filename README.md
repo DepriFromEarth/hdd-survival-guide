@@ -18,7 +18,6 @@ https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#windows
 - If you are on Linux, proceed here.
 https://github.com/DepriFromEarth/hdd-survival-guide/blob/main/README.md#linux
 
-
 # Windows
 
 ## Partition Style
@@ -43,6 +42,13 @@ Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will 
 
 Now that we have reinstalled Windows or simply checked that everything is okay, let's continue down below.
 
+## Short Stroke
+ We will short-stroke our hard drive to increase the minimum speeds of the drive.
+- Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
+- Here's the official link to HDD Tune: http://www.hdtune.com/download.html
+
+You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
+
 ## Enabling Prefetching
 After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
@@ -55,50 +61,9 @@ Then click Apply and OK.
 Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory ManagementPrefetchParameters] and then to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMe].
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
-## Short Stroke
- We will short-stroke our hard drive to increase the minimum speeds of the drive.
-- Please follow this video: https://www.youtube.com/watch?v=toLYV7th0L8
-- Here's the official link to HDD Tune: http://www.hdtune.com/download.html
-
-You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
-
 ## Write Buffer Cache
 I suggest leaving the write-buffer cache on, and it should be by default, but if you are worried about data loss, it's completely fine to disable it, but speeds may suffer. You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
 
-## File System
-Now we will optimize the file system.
-
-Open CMD & enter the commands below.
-
-- Disables the creation of 8.3 character-length file names on FAT- & NTFS-formatted volumes
-
-    ```bat
-    fsutil behavior set disable8dot3 1
-    ```
-
-- Disable updates to the Last Access Time stamp on each directory when directories are listed on an NTFS volume
-
-    ```bat
-    fsutil behavior set disablelastaccess 1
-    ```
-
-- Enables delete notifications (also known as trim or unmap), should be enabled by default but here for safe measure
-
-    ```bat
-    fsutil behavior set disabledeletenotify 0
-    ```
-    
-## Configure Event Trace Sessions
-I personally think you should disable Event Trace Sessions, but if you need them for logging,
-
-Create registry files to toggle event trace sessions. Programs that rely on event tracers such will not be able to log data until the required sessions are restored which is the purpose of creating two registry files to toggle between them (identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the ``C:\`` directory. As with the services scripts, these registry files must be ran with NSudo.
-
-```bat
-reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" "C:\ets-enable.reg"
->> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00
->> "C:\ets-disable.reg" echo.
->> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
-```
 ## Clean Up
 Now we will look at cleaning up junk files or unwanted programs.
 
@@ -169,7 +134,7 @@ Now that we have done all that, we can discuss defragging programs.
  
   - Contig GUI: https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
 
-## Optimizing file placement
+## Optimizing file placement and the file system
 
 Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
 
@@ -180,6 +145,39 @@ Now open a command prompt with admin rights and type
 Now your PC restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
 
 Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better when they don't!
+
+Now we will optimize the file system.
+
+Open CMD & enter the commands below.
+
+- Disables the creation of 8.3 character-length file names on FAT- & NTFS-formatted volumes
+
+    ```bat
+    fsutil behavior set disable8dot3 1
+    ```
+
+- Disable updates to the Last Access Time stamp on each directory when directories are listed on an NTFS volume
+
+    ```bat
+    fsutil behavior set disablelastaccess 1
+    ```
+
+- Enables delete notifications (also known as trim or unmap), should be enabled by default but here for safe measure
+
+    ```bat
+    fsutil behavior set disabledeletenotify 0
+    ```
+## Configure Event Trace Sessions
+I personally think you should disable Event Trace Sessions, but if you need them for logging,
+
+Create registry files to toggle event trace sessions. Programs that rely on event tracers such will not be able to log data until the required sessions are restored which is the purpose of creating two registry files to toggle between them (identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the ``C:\`` directory. As with the services scripts, these registry files must be ran with NSudo.
+
+```bat
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" "C:\ets-enable.reg"
+>> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00
+>> "C:\ets-disable.reg" echo.
+>> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
+```
 
 ## TeraCopy
 https://www.codesector.com/teracopy
