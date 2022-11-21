@@ -38,7 +38,7 @@ Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will 
 
 - Do not try to mix and match GPT and MBR partitioning styles with each other because issues can arise.
 
-- There are multiple ways to reinstall Windows, so I will not go over that here, but I suggest using Rufus and selecting the right partition style, then burning the desired iso to the USB.
+- There are multiple ways to reinstall Windows, so I will not go over that here, but I suggest using Rufus and selecting the right partition style, use NTFS then burning the desired iso to the USB.
 
 Now that we have reinstalled Windows or simply checked that everything is okay, let's continue down below.
 
@@ -62,7 +62,11 @@ Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory M
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
 ## Write Buffer Cache
-I suggest leaving the write-buffer cache on, and it should be by default, but if you are worried about data loss, it's completely fine to disable it, but speeds may suffer. You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
+You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
+
+On for performance, Off for Data protection
+
+"turning disk write caching on may increase operating system performance; however, it may also result in the loss of information if a power failure, equipment failure, or software failure occurs." - https://learn.microsoft.com/en-us/troubleshoot/windows-server/backup-and-storage/turn-disk-write-caching-on-off
 
 ## Task Scheduler and Startup Apps
 In Task Scheduler, delete or disable all of the tasks.
@@ -70,6 +74,36 @@ In Task Scheduler, delete or disable all of the tasks.
 Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
 If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app. This will help decrease the boot time.
 
+## Turning Off the Content Indexing
+
+Indexing is great for the Windows search feature, but it stinks in practice. OpenShell + Everything is a good alternative to Windows' search. We will be turning off indexing.
+
+Open Explorer. Right-click the drive you want to work with and then click Properties. On the General tab, deactivate the Allow Files on This Drive to Have Contents Indexed in Addition to File Properties check box. Click OK.
+
+OpenShell: https://github.com/Open-Shell/Open-Shell-Menu
+Everything: https://www.voidtools.com/
+
+## Disabling Compression and Encryption
+
+Both of these slow down disk speeds. If you play games from the microsoft store or the Xbox app do not disable encryption becuse they require encryption.
+
+## TeraCopy
+https://www.codesector.com/teracopy
+
+I highly suggest using this program even if you have an SSD.
+Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
+
+## Configure Event Trace Sessions
+I personally think you should disable Event Trace Sessions, but if you need them for logging,
+
+Create registry files to toggle event trace sessions. Programs that rely on event tracers such will not be able to log data until the required sessions are restored which is the purpose of creating two registry files to toggle between them (identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the ``C:\`` directory. As with the services scripts, these registry files must be ran with NSudo.
+
+```bat
+reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" "C:\ets-enable.reg"
+>> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00
+>> "C:\ets-disable.reg" echo.
+>> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
+```
 ## Defrag
 Now that we have done all that, we can discuss defragging programs.
 
@@ -93,7 +127,7 @@ Now your PC restart six times. After the second reboot, the MS defragmentation p
 
 Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better when they don't!
 
-Now we will optimize the file system.
+Now we will optimize the file system. Do not disable Encryption if you play Xbox/MS Store games
 
 Open CMD & enter the commands below.
 
@@ -114,27 +148,21 @@ Open CMD & enter the commands below.
     ```bat
     fsutil behavior set disabledeletenotify 0
     ```
-## Configure Event Trace Sessions
-I personally think you should disable Event Trace Sessions, but if you need them for logging,
+- Disables compression
 
-Create registry files to toggle event trace sessions. Programs that rely on event tracers such will not be able to log data until the required sessions are restored which is the purpose of creating two registry files to toggle between them (identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the ``C:\`` directory. As with the services scripts, these registry files must be ran with NSudo.
+    ```bat
+    fsutil behavior set disablecompression 1
+    ```
+- Disables Encryption
 
-```bat
-reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" "C:\ets-enable.reg"
->> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00
->> "C:\ets-disable.reg" echo.
->> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
-```
-
-## TeraCopy
-https://www.codesector.com/teracopy
-
-I highly suggest using this program even if you have an SSD.
-Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
-
+    ```bat
+    fsutil behavior set disableencryption 1
+    ```
+  
 ## Check if your Hard Drive is dying
 
 Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
+
 
 # Linux
 
