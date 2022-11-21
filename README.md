@@ -53,9 +53,10 @@ You want to keep your OS near the beginning of the drive (15-20GB Partition depe
 After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
 
-Open Run once again and type "services.msc." Find Superfetch or Sysmain on Windows 10 and later.
-Set the startup type to automatic and start the services.
-Then click Apply and OK.
+- Open Run once again and type "services.msc." 
+- Find Superfetch or Sysmain on Windows 10 and later.
+- Set the startup type to automatic and start the services.
+- Then click Apply and OK.
 
 Type "regedit" and press Enter.
 Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory ManagementPrefetchParameters] and then to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMe].
@@ -71,8 +72,12 @@ On for performance, Off for Data protection
 ## Task Scheduler and Startup Apps
 In Task Scheduler, delete or disable all of the tasks.
 
-Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
-If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app. This will help decrease the boot time.
+- Open Run and type msconfig
+- then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
+
+If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or 
+- press Windows key + I and go to Apps, 
+- then Startup, and disable each app.
 
 ## Turning Off the Content Indexing
 
@@ -82,10 +87,6 @@ Open Explorer. Right-click the drive you want to work with and then click Proper
 
 - OpenShell: https://github.com/Open-Shell/Open-Shell-Menu
 - Everything: https://www.voidtools.com/
-
-## Disabling Compression and Encryption
-
-Both of these slow down disk speeds. If you play games from the microsoft store or the Xbox app do not disable encryption becuse they require encryption.
 
 ## TeraCopy
 https://www.codesector.com/teracopy
@@ -153,7 +154,7 @@ Open CMD & enter the commands below.
     ```bat
     fsutil behavior set disablecompression 1
     ```
-- Disables Encryption
+- Disables encryption
 
     ```bat
     fsutil behavior set disableencryption 1
