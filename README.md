@@ -49,8 +49,6 @@ Now that we have reinstalled Windows or simply checked that everything is okay, 
 You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
 
 ## Enabling Prefetching
-Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
-
 After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
 
@@ -161,11 +159,13 @@ In Task Scheduler, delete or disable all of the tasks.
 Open Run and type msconfig, then go to Startup and click Disable All. (Windows 7, 8, XP, and Vista)
 If you are on Windows 10+, you'll have to open up Task Manager and disable startups from there, or press Windows key + I and go to Apps, then Startup, and disable each app. This will help decrease the boot time.
 
+Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
+
 Now open a command prompt with admin rights and type
 
     -xbootmgr -trace boot -prepSystem -verboseReadyBoot
     
-Now your PC will have been restarted six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
+Now your PC restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
 
 Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better when they don't!
 
