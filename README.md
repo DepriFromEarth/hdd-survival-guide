@@ -5,7 +5,7 @@ Questions you should ask yourself before starting this guide
 
 1. Do I have an SSD and HDD? If you do, then follow this video. https://www.youtube.com/watch?v=QG4LXw4Nd5U
 
-2. Do I have multiple drives? If so, set them up as RAID. ( I will add this to the guide later )
+2. Do I have multiple drives? If so, set them up as RAID.
 
 3. Do I have a traditional HDD? If so, continue with the rest of the guide!
 
