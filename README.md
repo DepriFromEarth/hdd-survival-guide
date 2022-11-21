@@ -54,8 +54,8 @@ After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
 
 - Open Run once again and type "services.msc." 
-- Find Superfetch or Sysmain on Windows 10 and later.
-- Set the startup type to automatic and start the services.
+- Find "ReadyBoost", "Superfetch/Sysmain".
+- Right click on them select properties and set the startup type to automatic and start the services.
 - Then click Apply and OK.
 
 Type "regedit" and press Enter.
@@ -63,7 +63,7 @@ Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory M
 Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
 
 ## Write Buffer Cache
-You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive, then going into policies to disable or enable it.
+You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive and clicking properties, then going into policies to disable or enable it.
 
 On for performance, Off for Data protection
 
@@ -124,11 +124,9 @@ Now open a command prompt with admin rights and type
 
     -xbootmgr -trace boot -prepSystem -verboseReadyBoot
     
-Now your PC restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster (for the description, read what ReadyBoot is). The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
+Your PC will restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster. The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
 
-Use only the included MS tool after the optimization because every tool places the files at a different offset on your HDD and all tools think they know it better when they don't!
-
-Now we will optimize the file system. Do not disable Encryption if you play Xbox/MS Store games
+Now we will optimize the file system. Do not disable Encryption if you play Xbox/MS Store games or care about your privacy
 
 Open CMD & enter the commands below.
 
@@ -154,7 +152,7 @@ Open CMD & enter the commands below.
     ```bat
     fsutil behavior set disablecompression 1
     ```
-- Disables encryption
+- Disables encryption ( Careful ! )
 
     ```bat
     fsutil behavior set disableencryption 1
@@ -164,6 +162,18 @@ Open CMD & enter the commands below.
 
 Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
 
+If you remember XP days, their was a tool called BootVis. The optimization is similar to this here, but the difference is, that is only starts the integrated MS defragmentation program for a better HDD layout, because XP doesn't have ReadyBoot.
+
+## Compare boot times
+
+To see the improvement in time, run these 2 commands:
+
+    xperf -i bootPrep_BASE+CSWITCH_1.etl -o 01_summary_start.xml -a boot
+    xperf -i boot_BASE+CSWITCH_1.etl -o 02_summary_end.xml -a boot
+
+To determine the boot time, open the XML files and look at the value bootDoneViaPostBoot. This value (-10000 = 10seconds) shows you the time, which Windows needs to boot completely.
+
+In the file 02_summary_end.xml it should be much lower.
 
 # Linux
 
