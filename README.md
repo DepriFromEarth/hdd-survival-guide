@@ -40,8 +40,10 @@ This will require you to use GPT regardless of whether you have a legacy BIOS be
 - 6. Right-click your disk and select properties. Then go to "Volumes."
 
 Here we can see if our partitioning style is MBR or GPT. If everything matches with our BIOS mode, nothing needs to be done!
-    - If we have MBR but our BIOS is UEFI, I suggest you reinstall Windows with the GPT style for greater storage and speeds.
-    - If we have GPT but our BIOS is legacy and the drive is 2TB+, we don't have to do anything.
+
+- If we have MBR but our BIOS is UEFI, I suggest you reinstall Windows with the GPT style for greater storage and speeds.
+  
+- If we have GPT but our BIOS is legacy and the drive is 2TB+, we don't have to do anything.
 
 - Do not try to mix and match GPT and MBR partitioning styles with each other because issues can arise.
 
