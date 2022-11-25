@@ -25,19 +25,27 @@ Before we start, we have to find out which type of BIOS we have so we can choose
 After we find this out, we can wipe the drive and install Windows again if we have the improper style.
 If you are already using the proper style, you can skip this step.
 
-- Open "Run" with the Windows key + R, type in "msinfo32," and press enter.
-- If we aren't there already, click System summary to bring us to the correct page.
-- Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will use the MBR partitioning style; if it displays UEFI, we will use GPT.
+- 1. Open "Run" with the Windows key + R, type in "msinfo32," and press enter.
+- 2. click System summary to bring us to the correct page.
+- 3. Find "BIOS Mode" It will say "Legacy" or "UEFI."
 
-- You can break these rules if your hard drive has 2 TB or more.
-- This will require you to use GPT regardless of whether you have a legacy BIOS because MBR simply doesn't support over 2 TB; the extra space will be lost.
+If it displays legacy, we will use the MBR partitioning style; if it displays UEFI, we will use GPT.
 
-    - Now type in Run, "diskmgmt.msc." Right-click your disk and select properties. Then go to "Volumes."
-    - Here we can see if our partitioning style is MBR or GPT. If everything matches with our BIOS mode, nothing needs to be done!
+You can break these rules if your hard drive has 2 TB or more.
+
+This will require you to use GPT regardless of whether you have a legacy BIOS because MBR simply doesn't support over 2 TB; the extra space will be lost.
+
+- 4. Now type in Run, "diskmgmt.msc."
+- 5. Find "Disk Drives" and collapse the section.
+- 6. Right-click your disk and select properties. Then go to "Volumes."
+
+Here we can see if our partitioning style is MBR or GPT. If everything matches with our BIOS mode, nothing needs to be done!
     - If we have MBR but our BIOS is UEFI, I suggest you reinstall Windows with the GPT style for greater storage and speeds.
     - If we have GPT but our BIOS is legacy and the drive is 2TB+, we don't have to do anything.
 
 - Do not try to mix and match GPT and MBR partitioning styles with each other because issues can arise.
+
+We can now close msinfo32 and devmgmt.
 
 - There are multiple ways to reinstall Windows, so I will not go over that here, but I suggest using Rufus and selecting the right partition style, use NTFS then burning the desired iso to the USB.
 
