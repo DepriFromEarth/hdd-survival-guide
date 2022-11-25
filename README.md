@@ -307,7 +307,7 @@ When should I defrag? when the system is around 56% fragmented. Constantly defra
 Avoid tapping the drive or a rumbly environment since this will affect the phsyical header.
 
 # Credits
-Thank you amitxv, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
+Thank you amitxv, Boga, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
 
 - Special thanks to Cynar for telling me to put this on github.
 
