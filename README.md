@@ -25,8 +25,9 @@ Before we start, we have to find out which type of BIOS we have so we can choose
 After we find this out, we can wipe the drive and install Windows again if we have the improper style.
 If you are already using the proper style, you can skip this step.
 
-- Open "Run" with the Windows key, type in "msinfo32," and press enter. If we aren't there already, click System summary to bring us to the correct page.
-Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will use the MBR partitioning style; if it displays UEFI, we will use GPT.
+- Open "Run" with the Windows key + R, type in "msinfo32," and press enter.
+- If we aren't there already, click System summary to bring us to the correct page.
+- Find "BIOS Mode" It will say "Legacy" or "UEFI." If it displays legacy, we will use the MBR partitioning style; if it displays UEFI, we will use GPT.
 
 - You can break these rules if your hard drive has 2 TB or more.
 - This will require you to use GPT regardless of whether you have a legacy BIOS because MBR simply doesn't support over 2 TB; the extra space will be lost.
