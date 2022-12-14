@@ -156,7 +156,7 @@ Open CMD & enter the commands below.
 - Enables delete notifications (also known as trim or unmap), should be enabled by default but here for safe measure
 
     ```bat
-    fsutil behavior set disabledeletenotify 0
+    fsutil behavior set disabledeletenotify 1
     ```
 - Disables compression
 
