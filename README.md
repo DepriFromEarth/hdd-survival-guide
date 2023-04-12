@@ -130,7 +130,10 @@ Now that we have done all that, we can discuss defragging programs.
 ## Disabling Windows' Heartbeat
 
 ```[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
-"TimeStampInterval"=dword:00000000```
+"TimeStampInterval"=dword:00000000
+```
+
+
 
 ## Optimizing file placement and the file system
 
