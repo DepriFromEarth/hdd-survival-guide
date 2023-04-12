@@ -127,6 +127,11 @@ Now that we have done all that, we can discuss defragging programs.
  
   - Contig GUI: https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
 
+## Disabling Windows' Heartbeat
+
+```[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
+"TimeStampInterval"=dword:00000000```
+
 ## Optimizing file placement and the file system
 
 Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
