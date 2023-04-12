@@ -129,7 +129,9 @@ Now that we have done all that, we can discuss defragging programs.
 
 ## Disabling Windows' Heartbeat
 
-```[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
+Goto [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability] and set TimeStampInterval to 0
+
+```
 "TimeStampInterval"=dword:00000000
 ```
 
