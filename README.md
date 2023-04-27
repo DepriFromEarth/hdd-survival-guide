@@ -5,11 +5,13 @@ Questions you should ask yourself before starting this guide
 
 1. Do I have an SSD and HDD? If you do, then follow this video. https://www.youtube.com/watch?v=QG4LXw4Nd5U
 
-2. Do I have multiple drives? If so, set them up as RAID.
+2. Do I have multiple drives? If so, set them up as RAID. Don't use RAID if data protection is critical to you.
 
 3. Do I have a traditional HDD? If so, continue with the rest of the guide!
 
 4. Am I on Windows or Linux?
+
+5. Is my hard drive dying? https://www.youtube.com/watch?v=OGOHA-t6j6M
 
 
 ## Where to Begin?
@@ -60,7 +62,22 @@ Now that we have reinstalled Windows or simply checked that everything is okay, 
 
 You want to keep your OS near the beginning of the drive (15-20GB Partition depending on your needs) and everything else on a separate partition.
 
-## Enabling Prefetching
+## Programs to use
+- TeraCopy: https://www.codesector.com/teracopy
+I highly suggest using this program even if you have an SSD.
+Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
+Also has an option to disable asynchronous if you disable smt/ht
+
+- OpenShell: https://github.com/Open-Shell/Open-Shell-Menu
+an alternative to start menu for a better search since we are disabling indexing.
+
+- Everything: https://www.voidtools.com/
+Find any file instantly and extremtly better than windows explorer file search.
+
+- 7zip: https://www.7-zip.org/
+A better program for handling archive files.
+    
+ ## Enabling Prefetching
 After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
 
@@ -80,6 +97,14 @@ On for performance, Off for Data protection
 
 "turning disk write caching on may increase operating system performance; however, it may also result in the loss of information if a power failure, equipment failure, or software failure occurs." - https://learn.microsoft.com/en-us/troubleshoot/windows-server/backup-and-storage/turn-disk-write-caching-on-off
 
+## Disabling Windows' Heartbeat
+
+Goto [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability] and set TimeStampInterval to 0
+
+```
+"TimeStampInterval"=dword:00000000
+```
+
 ## Task Scheduler and Startup Apps
 In Task Scheduler, delete or disable all of the tasks.
 
@@ -90,65 +115,7 @@ If you are on Windows 10+, you'll have to open up Task Manager and disable start
 - press Windows key + I and go to Apps, 
 - then Startup, and disable each app.
 
-## Turning Off the Content Indexing
-
-Indexing is great for the Windows search feature, but it stinks in practice. OpenShell + Everything is a good alternative to Windows' search. We will be turning off indexing.
-
-Open Explorer. Right-click the drive you want to work with and then click Properties. On the General tab, deactivate the Allow Files on This Drive to Have Contents Indexed in Addition to File Properties check box. Click OK.
-
-- OpenShell: https://github.com/Open-Shell/Open-Shell-Menu
-- Everything: https://www.voidtools.com/
-
-## TeraCopy
-https://www.codesector.com/teracopy
-
-I highly suggest using this program even if you have an SSD.
-Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
-
-## Configure Event Trace Sessions
-I personally think you should disable Event Trace Sessions, but if you need them for logging,
-
-Create registry files to toggle event trace sessions. Programs that rely on event tracers such will not be able to log data until the required sessions are restored which is the purpose of creating two registry files to toggle between them (identical concept to the service scripts). Open CMD and enter the commands below to build the registry files in the ``C:\`` directory. As with the services scripts, these registry files must be ran with NSudo.
-
-```bat
-reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" "C:\ets-enable.reg"
->> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00
->> "C:\ets-disable.reg" echo.
->> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
-```
-## Defrag
-Now that we have done all that, we can discuss defragging programs.
-
-- I can only suggest using Contig or the default Windows defragmenter.
-
-  - Contig: https://docs.microsoft.com/en-us/sysinternals/downloads/contig
-
-  - Contig Guide: https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
- 
-  - Contig GUI: https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
-
-## Disabling Windows' Heartbeat
-
-Goto [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability] and set TimeStampInterval to 0
-
-```
-"TimeStampInterval"=dword:00000000
-```
-
-
-
-## Optimizing file placement and the file system
-
-Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
-
-Now open a command prompt with admin rights and type
-
-    -xbootmgr -trace boot -prepSystem -verboseReadyBoot
-    
-Your PC will restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster. The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
-
-Now we will optimize the file system. Do not disable Encryption if you play Xbox/MS Store games or care about your privacy
-
+## File system optimization
 Open CMD & enter the commands below.
 
 - Disables the creation of 8.3 character-length file names on FAT- & NTFS-formatted volumes
@@ -168,20 +135,21 @@ Open CMD & enter the commands below.
     ```bat
     fsutil behavior set disabledeletenotify 1
     ```
-- Disables compression
+- Enable compression ( Consider benchmarking on vs off with crystal disk info )
 
     ```bat
-    fsutil behavior set disablecompression 1
+    fsutil behavior set disablecompression 0
     ```
-- Disables encryption ( Careful ! )
 
-    ```bat
-    fsutil behavior set disableencryption 1
-    ```
-  
-## Check if your Hard Drive is dying
+## Optimizing file placement
 
-Your Hard Drive Could be DYING. Here's How to Check!: https://www.youtube.com/watch?v=OGOHA-t6j6M
+Install the Windows Performance Tool Kit, then reboot your system. https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/
+
+Now open a command prompt with admin rights and type
+
+    -xbootmgr -trace boot -prepSystem -verboseReadyBoot
+    
+Your PC will restart six times. After the second reboot, the MS defragmentation program is running and is placing the files into an optimized layout so that Windows will boot up faster. The last reboot was training for ReadyBoot. After the training is completed, you will notice a significant improvement in startup time. 
 
 ## Compare boot times
 
@@ -193,6 +161,17 @@ To see the improvement in time, run these 2 commands:
 To determine the boot time, open the XML files and look at the value bootDoneViaPostBoot. This value (-10000 = 10seconds) shows you the time, which Windows needs to boot completely.
 
 In the file 02_summary_end.xml it should be much lower.
+
+## Defrag
+Now that we have done all that, we can discuss defragging programs.
+
+- I can only suggest using Contig or the default Windows defragmenter.
+
+  - Contig: https://docs.microsoft.com/en-us/sysinternals/downloads/contig
+
+  - Contig Guide: https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
+ 
+  - Contig GUI: https://www.majorgeeks.com/files/details/power_defragmenter_gui.html
 
 # Linux
 
@@ -328,6 +307,6 @@ When should I defrag? when the system is around 56% fragmented. Constantly defra
 Avoid tapping the drive or a rumbly environment since this will affect the phsyical header.
 
 # Credits
-Thank you amitxv, Boga, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
+Thank you amitxv, Dato, Boga, MagicAndre1981, LinusTechTips, NCIX Tech Tips, Wiki, Microsoft and the Linux community
 
 - Special thanks to Cynar for telling me to put this on github.
