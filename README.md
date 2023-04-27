@@ -68,25 +68,30 @@ I highly suggest using this program even if you have an SSD.
 Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
 Also has an option to disable asynchronous if you disable smt/ht
 
-- OpenShell: https://github.com/Open-Shell/Open-Shell-Menu
-an alternative to start menu for a better search since we are disabling indexing.
-
 - Everything: https://www.voidtools.com/
 Find any file instantly and extremtly better than windows explorer file search.
 
 - 7zip: https://www.7-zip.org/
 A better program for handling archive files.
     
- ## Enabling Prefetching and Font Cache
+ ## Enabling Prefetching and Font Cache and Disabling Windows' Heartbeat and Indexing
 After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
 
-- Open Run once again and type "services.msc." 
+- Open Run and type "services.msc." 
 - Find "ReadyBoost", "Superfetch/Sysmain" and "Windows Font Cache Service" along with "Windows Presentation Foundation Font Cache 3.0.0.0".
 - Right click on them select properties and set the startup type to automatic and start the services.
 - Then click Apply and OK.
 
 If you want to double check to ensure they are on goto [Computer\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services] and find FontCache, FontCache3.0.0.0, Superfetch/SysMain and make sure the "Start" key is set to 3.
+
+For the heartbeat goto [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability] and set TimeStampInterval to 0.
+
+Finally to disable indexing 
+- Open Run once again and type "services.msc." 
+- Find "Windows Search".
+- Right click on it select properties and set the startup type to disable and stop the service.
+- Then click Apply and OK.
 
 ## Write Buffer Cache
 You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive and clicking properties, then going into policies to disable or enable it.
@@ -94,14 +99,6 @@ You can check if it's on by opening Run and typing "devmgmt.msc," looking for "D
 On for performance, Off for Data protection
 
 "turning disk write caching on may increase operating system performance; however, it may also result in the loss of information if a power failure, equipment failure, or software failure occurs." - https://learn.microsoft.com/en-us/troubleshoot/windows-server/backup-and-storage/turn-disk-write-caching-on-off
-
-## Disabling Windows' Heartbeat
-
-Goto [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability] and set TimeStampInterval to 0
-
-```
-"TimeStampInterval"=dword:00000000
-```
 
 ## Task Scheduler and Startup Apps
 In Task Scheduler, delete or disable all of the tasks.
