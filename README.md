@@ -68,7 +68,7 @@ I highly suggest using this program even if you have an SSD.
 Instead of copying files all at once TeraCopy will copy one at a time to improve transfer speeds.
 Also has an option to disable asynchronous if you disable smt/ht
 
-- Everything: https://www.voidtools.com/
+- EverythingToolbar: (https://github.com/srwi/EverythingToolbar/releases)
 Find any file instantly and extremtly better than windows explorer file search.
 
 - 7zip: https://www.7-zip.org/
