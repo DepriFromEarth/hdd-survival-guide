@@ -86,10 +86,6 @@ By default, they should be like this, but just in case, we will enable them if t
 - Right click on them select properties and set the startup type to automatic and start the services.
 - Then click Apply and OK.
 
-Type "regedit" and press Enter.
-Navigate to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMemory ManagementPrefetchParameters] and then to [HKEY_LOCAL_MACHINESYSTEMControlSet001ControlSession ManagerMe].
-Find "EnablePrefetcher" and "EnableSuperfetch" and set their values to 3.
-
 ## Write Buffer Cache
 You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive and clicking properties, then going into policies to disable or enable it.
 
