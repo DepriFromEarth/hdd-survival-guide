@@ -86,6 +86,8 @@ By default, they should be like this, but just in case, we will enable them if t
 - Right click on them select properties and set the startup type to automatic and start the services.
 - Then click Apply and OK.
 
+If you want to double check to ensure they are on goto [Computer\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services] and find FontCache, FontCache3.0.0.0, Superfetch/SysMain and make sure the "Start" key is set to 3.
+
 ## Write Buffer Cache
 You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive and clicking properties, then going into policies to disable or enable it.
 
