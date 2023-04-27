@@ -93,6 +93,12 @@ Finally to disable indexing
 - Right click on it select properties and set the startup type to disable and stop the service.
 - Then click Apply and OK.
 
+If you are following the guide on a non-fresh install I suggest to open run and follow the steps below.
+- Type "control" in run.
+- Goto indexing options.
+- Disable any file/location using indexing and uncheck everything.
+
+
 ## Write Buffer Cache
 You can check if it's on by opening Run and typing "devmgmt.msc," looking for "Disk drives," collapsing the section, and right-clicking your desired drive and clicking properties, then going into policies to disable or enable it.
 
