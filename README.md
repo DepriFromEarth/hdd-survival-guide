@@ -77,12 +77,12 @@ Find any file instantly and extremtly better than windows explorer file search.
 - 7zip: https://www.7-zip.org/
 A better program for handling archive files.
     
- ## Enabling Prefetching
+ ## Enabling Prefetching and Font Cache
 After that, we need to enable a couple services and set them to automatic.
 By default, they should be like this, but just in case, we will enable them if they get disabled somehow.
 
 - Open Run once again and type "services.msc." 
-- Find "ReadyBoost", "Superfetch/Sysmain".
+- Find "ReadyBoost", "Superfetch/Sysmain" and "Windows Font Cache Service" along with "Windows Presentation Foundation Font Cache 3.0.0.0".
 - Right click on them select properties and set the startup type to automatic and start the services.
 - Then click Apply and OK.
 
