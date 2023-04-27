@@ -128,7 +128,7 @@ Open CMD & enter the commands below.
     fsutil behavior set disablelastaccess 1
     ```
 
-- Enables delete notifications (also known as trim or unmap), should be enabled by default but here for safe measure
+- Disables delete notifications (also known as trim or unmap).
 
     ```bat
     fsutil behavior set disabledeletenotify 1
